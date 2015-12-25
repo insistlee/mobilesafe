@@ -7,10 +7,6 @@
         android:topRightRadius="10dp"
         android:bottomLeftRadius="15dp"
         android:bottomRightRadius="20dp"/>
-    <gradient
-        android:startColor="#FFFF0000"
-        android:endColor="#80FF00FF"
-        android:angle="45"/>
     <padding
         android:bottom="10dp"
         android:left="10dp"
