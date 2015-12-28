@@ -5,4 +5,12 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!--自定义对话框样式-->
+    <style name="dialog_custom" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>
