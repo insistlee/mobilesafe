@@ -14,20 +14,18 @@ import com.application.lee.mobilesafe.R;
 /**
  * 版  权   ：
  * 作  者   ：李晓锋
- * 创建日期  ：2015\12\10
+ * 创建日期  ：2015\12\28
  * 描  述   ：
  * 修订历史  ：
  */
-public class SetUpPasswordDialog extends Dialog implements android.view.View.OnClickListener{
+public class InterPasswordDialog extends Dialog implements android.view.View.OnClickListener{
     /**标题栏*/
     private TextView mTitleTV;
-    /**首次输入密码文本框*/
-    public EditText mFirstPWDET;
-    /**确认密码文本框*/
-    public EditText mAffirmET;
+    /**输入密码编辑框*/
+    private EditText mPswd;
     /**回调接口*/
     private MyCallBack myCallBack;
-    public SetUpPasswordDialog(Context context) {
+    public InterPasswordDialog(Context context) {
         super(context,R.style.dialog_custom);    //引入自定义的对话框
     }
 
@@ -36,18 +34,17 @@ public class SetUpPasswordDialog extends Dialog implements android.view.View.OnC
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.setup_password_dialog);
+        setContentView(R.layout.inter_password_dialog);
         super.onCreate(savedInstanceState);
         initView();
     }
 
     /**初始化控件*/
     private void initView() {
-        mTitleTV= (TextView) findViewById(R.id.tv_setuppwd_title);
-        mFirstPWDET= (EditText) findViewById(R.id.et_firstpwd);
-        mAffirmET= (EditText) findViewById(R.id.et_affirm_password);
-        findViewById(R.id.btn_ok).setOnClickListener(this);
-        findViewById(R.id.btn_cancle).setOnClickListener(this);
+        mTitleTV= (TextView) findViewById(R.id.tv_interpwd_title);
+        mPswd= (EditText) findViewById(R.id.et_inter_password);
+        findViewById(R.id.btn_confirm).setOnClickListener(this);
+        findViewById(R.id.btn_dismiss).setOnClickListener(this);
     }
 
 
@@ -55,26 +52,36 @@ public class SetUpPasswordDialog extends Dialog implements android.view.View.OnC
      * 设置对话框标题栏
      * @param title
      */
-    public void setmTitle(String title){
+    public void setTitle(String title){
         if(!TextUtils.isEmpty(title)){
             mTitleTV.setText(title);
         }
     }
 
+    /**
+     * 获取输入框密码
+     */
+    public String getPassword(){
+        String password = mPswd.getText().toString();
+        if(TextUtils.isEmpty(password)){
+            return "";
+        }
+        return password;
+    }
 
     public void onClick(View v){
         switch(v.getId()){
-            case R.id.btn_ok:
-                myCallBack.ok();
+            case R.id.btn_confirm:
+                myCallBack.confirm();
                 break;
-            case R.id.btn_cancle:
+            case R.id.btn_dismiss:
                 myCallBack.cancle();
                 break;
         }
     }
 
     public interface MyCallBack {
-        void ok();
+        void confirm();
         void cancle();
     }
 }

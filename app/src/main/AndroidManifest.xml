@@ -4,12 +4,21 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.write_external_storage"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
+        android:name="com.application.lee.mobilesafe.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <receiver
+            android:name="com.application.lee.mobilesafe.chapter02.receiver.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
 
         <activity android:name="com.application.lee.mobilesafe.chapter01.SplashActivity">
             <intent-filter>
@@ -18,6 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.application.lee.mobilesafe.HomeActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter02.LostFindActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter02.SetUp4Activity"/>
         </application>
 
 </manifest>
