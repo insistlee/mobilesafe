@@ -1,5 +1,6 @@
 package com.application.lee.mobilesafe.chapter02;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -57,6 +58,18 @@ public class SetUp3Activity extends BaseSetUpActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.btn_addcontact:
+                startActivityForResult(new Intent(this,ContactSelectActivity.class),0);
+                break;
+        }
+    }
 
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(data!=null){
+            String phone = data.getStringExtra("phone");
+            mInputPhone.setText(phone);
+        }
     }
 }

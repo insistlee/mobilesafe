@@ -14,6 +14,18 @@
         android:theme="@style/AppTheme" >
 
         <receiver
+            android:name="com.application.lee.mobilesafe.chapter02.receiver.MyDeviceAdminReceiver"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
             android:name="com.application.lee.mobilesafe.chapter02.receiver.BootCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
@@ -28,7 +40,16 @@
         </activity>
         <activity android:name="com.application.lee.mobilesafe.HomeActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter02.LostFindActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter02.SetUp1Activity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter02.SetUp2Activity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter02.SetUp3Activity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter02.SetUp4Activity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter02.ContactSelectActivity"/>
+
+        <service
+            android:name="com.application.lee.mobilesafe.chapter02.service.GPSLocationService"
+            android:persistent="true">
+        </service>
         </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package com.application.lee.mobilesafe;
 
 import android.app.Activity;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import com.application.lee.mobilesafe.chapter02.Dialog.InterPasswordDialog;
 import com.application.lee.mobilesafe.chapter02.Dialog.SetUpPasswordDialog;
 import com.application.lee.mobilesafe.chapter02.LostFindActivity;
 import com.application.lee.mobilesafe.chapter02.Utils.MD5Utils;
+import com.application.lee.mobilesafe.chapter02.receiver.MyDeviceAdminReceiver;
 
 /**
  * 版  权   ：
@@ -30,6 +33,8 @@ public class HomeActivity extends Activity {
     private GridView gv_home;
     private long mExitTime;
     private SharedPreferences msharedPreferences;
+    private DevicePolicyManager PolicyManager;
+    private ComponentName componentName;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -82,6 +87,19 @@ public class HomeActivity extends Activity {
                 }
             }
         });
+        //1.获取设备管理员
+        PolicyManager = (DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
+        //2.申请权限.MyDeviceAdminReceiver继承自DeviceAdminReceiver
+        componentName = new ComponentName(this, MyDeviceAdminReceiver.class);
+        //3.如果没有权限就申请权限
+        boolean active = PolicyManager.isAdminActive(componentName);
+        if(!active){
+            //没有管理员权限，则获取管理员的权限
+            Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,componentName);
+            intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,"获取超级管理员权限，用于远程锁屏和清楚数据");
+            startActivity(intent);
+        }
     }
 
     /**
