@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/tv_safephone"
             style="@style/textview16sp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:textColor="@color/purple"/>
@@ -32,7 +32,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="50dp">
         <TextView
             android:id="@+id/tv_lostfind_protectstatus"
             style="@style/textview16sp"
@@ -102,10 +102,11 @@
         android:layout_marginTop="15dp">
         <TextView
             style="@style/textview16sp"
-            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:text="#*alarm*#"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
         <TextView
             style="@style/textview16sp"
             android:layout_alignParentLeft="true"
@@ -122,10 +123,11 @@
         android:layout_marginTop="15dp">
         <TextView
             style="@style/textview16sp"
-            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:text="#*location*#"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
         <TextView
             style="@style/textview16sp"
             android:layout_alignParentLeft="true"
@@ -142,10 +144,11 @@
         android:layout_marginTop="15dp">
         <TextView
             style="@style/textview16sp"
-            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:text="#*lockScreen*#"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
         <TextView
             style="@style/textview16sp"
             android:layout_alignParentLeft="true"
@@ -162,10 +165,11 @@
         android:layout_marginTop="15dp">
         <TextView
             style="@style/textview16sp"
-            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:text="#*wipedata*#"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
         <TextView
             style="@style/textview16sp"
             android:layout_alignParentLeft="true"
