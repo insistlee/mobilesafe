@@ -1,0 +1,29 @@
+package com.application.lee.mobilesafe.chapter03.db;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+/**
+ * 版  权   ：
+ * 作  者   ：李晓锋
+ * 创建日期  ：2016\1\11
+ * 描  述   ：
+ * 修订历史  ：
+ */
+public class BlackNumberOpenHelper extends SQLiteOpenHelper {
+    public BlackNumberOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, "blackNumber.db", null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table blacknumber (id integer primary key autoincrement,number varchar(20)" +
+                ",name varchar(255),mode integer)");
+}
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+}
