@@ -20,6 +20,7 @@ import com.application.lee.mobilesafe.chapter02.Dialog.SetUpPasswordDialog;
 import com.application.lee.mobilesafe.chapter02.LostFindActivity;
 import com.application.lee.mobilesafe.chapter02.Utils.MD5Utils;
 import com.application.lee.mobilesafe.chapter02.receiver.MyDeviceAdminReceiver;
+import com.application.lee.mobilesafe.chapter03.SecurityPhoneActivity;
 
 /**
  * 版  权   ：
@@ -61,7 +62,7 @@ public class HomeActivity extends Activity {
                     }
                         break;
                     case 1://通讯卫士
-                        /*startActivity(SecurityPhoneActivity.class);*/
+                        startActivity(SecurityPhoneActivity.class);
                         break;
                     case 2://软件管家
                         /*startActivity(AppManagerActivity.class);*/

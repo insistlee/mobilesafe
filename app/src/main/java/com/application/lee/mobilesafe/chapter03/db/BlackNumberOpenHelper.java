@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * 修订历史  ：
  */
 public class BlackNumberOpenHelper extends SQLiteOpenHelper {
-    public BlackNumberOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public BlackNumberOpenHelper(Context context) {
         super(context, "blackNumber.db", null, 1);
     }
 

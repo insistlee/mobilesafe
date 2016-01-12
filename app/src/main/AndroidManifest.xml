@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.application.lee.mobilesafe" >
+    package="com.application.lee.mobilesafe">
 
-    <uses-sdk android:minSdkVersion="16"
-              android:targetSdkVersion="21" />
+    <!--<instrumentation
+        android:name="android.test.InstrumentationTestCase"
+        android:targetPackage="com.application.lee.mobilesafe"/>-->
+
+    <uses-sdk android:minSdkVersion="21"
+              android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.write_external_storage"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/><!-- 读取通讯录权限 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/><!-- 写入通讯录权限 -->
 
     <application
         android:name="com.application.lee.mobilesafe.App"
@@ -16,6 +22,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
+        <uses-library android:name="android.test.runner"/>
         <receiver
             android:name="com.application.lee.mobilesafe.chapter02.receiver.MyDeviceAdminReceiver"
             android:description="@string/sample_device_admin_description"
@@ -48,6 +55,8 @@
         <activity android:name="com.application.lee.mobilesafe.chapter02.SetUp3Activity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter02.SetUp4Activity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter02.ContactSelectActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter03.SecurityPhoneActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter03.AddBlackNumberActivity"/>
 
         <service
             android:name="com.application.lee.mobilesafe.chapter02.service.GPSLocationService"
