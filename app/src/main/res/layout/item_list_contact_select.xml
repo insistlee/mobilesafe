@@ -13,16 +13,19 @@
         android:layout_margin="15dp"
         android:background="@drawable/contact_icon"/>
     <TextView
+        android:text="姓名"
         android:id="@+id/tv_name"
         style="@style/textview16sp"
-        android:layout_alignTop="@+id/view1"
-        android:layout_alignRight="@+id/view1"
-        android:textColor="@color/purple"/>
+        android:textColor="@color/purple"
+        android:layout_toRightOf="@+id/view1"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"/>
     <TextView
+        android:text="号码"
         android:id="@+id/tv_phone"
         style="@style/textview14sp"
-        android:layout_toRightOf="@+id/view1"
-        android:layout_below="@+id/tv_name"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/purple"/>
+        android:textColor="@color/purple"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="15dp" />
 </RelativeLayout>

@@ -6,11 +6,10 @@
         android:name="android.test.InstrumentationTestCase"
         android:targetPackage="com.application.lee.mobilesafe"/>-->
 
-    <uses-sdk android:minSdkVersion="21"
-              android:targetSdkVersion="19" />
-
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/><!--获取网络信息状态，如当前的网络连接是否有效-->
     <uses-permission android:name="android.permission.write_external_storage"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/><!-- 读取通讯录权限 -->
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/><!-- 写入通讯录权限 -->
