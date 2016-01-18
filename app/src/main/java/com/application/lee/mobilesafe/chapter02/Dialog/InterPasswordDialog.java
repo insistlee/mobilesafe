@@ -25,6 +25,7 @@ public class InterPasswordDialog extends Dialog implements android.view.View.OnC
     private EditText mPswd;
     /**回调接口*/
     private MyCallBack myCallBack;
+
     public InterPasswordDialog(Context context) {
         super(context,R.style.dialog_custom);    //引入自定义的对话框
     }
@@ -35,6 +36,7 @@ public class InterPasswordDialog extends Dialog implements android.view.View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.inter_password_dialog);
+        setCanceledOnTouchOutside(false);//点击对话框外面不会dismiss
         super.onCreate(savedInstanceState);
         initView();
     }
