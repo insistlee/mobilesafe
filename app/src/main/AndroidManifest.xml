@@ -9,6 +9,10 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/><!--获取网络信息状态，如当前的网络连接是否有效-->
     <uses-permission android:name="android.permission.write_external_storage"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.read_call_log"/>
+    <uses-permission android:name="android.permission.write_call_log"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/><!-- 读取通讯录权限 -->
@@ -21,7 +25,6 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-        <uses-library android:name="android.test.runner"/>
         <receiver
             android:name="com.application.lee.mobilesafe.chapter02.receiver.MyDeviceAdminReceiver"
             android:description="@string/sample_device_admin_description"
@@ -38,6 +41,22 @@
             android:name="com.application.lee.mobilesafe.chapter02.receiver.BootCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.application.lee.mobilesafe.chapter03.receiver.InterceptSmsReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
+        <!--拦截黑名单电话-->
+        <receiver
+            android:name="com.application.lee.mobilesafe.chapter03.receiver.InterceptCallReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.Telephony.PHONE_STATE"/>
+                <action android:name="android.intent.action.Telephony.NEW_OUTGOING_CALL"/>
             </intent-filter>
         </receiver>
 
