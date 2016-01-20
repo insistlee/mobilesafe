@@ -75,6 +75,7 @@
         <activity android:name="com.application.lee.mobilesafe.chapter02.ContactSelectActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter03.SecurityPhoneActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter03.AddBlackNumberActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter04.AppManagerActivity"/>
 
         <service
             android:name="com.application.lee.mobilesafe.chapter02.service.GPSLocationService"

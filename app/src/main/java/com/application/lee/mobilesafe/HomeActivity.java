@@ -21,6 +21,7 @@ import com.application.lee.mobilesafe.chapter02.LostFindActivity;
 import com.application.lee.mobilesafe.chapter02.Utils.MD5Utils;
 import com.application.lee.mobilesafe.chapter02.receiver.MyDeviceAdminReceiver;
 import com.application.lee.mobilesafe.chapter03.SecurityPhoneActivity;
+import com.application.lee.mobilesafe.chapter04.AppManagerActivity;
 
 /**
  * 版  权   ：
@@ -65,7 +66,7 @@ public class HomeActivity extends Activity {
                         startActivity(SecurityPhoneActivity.class);
                         break;
                     case 2://软件管家
-                        /*startActivity(AppManagerActivity.class);*/
+                        startActivity(AppManagerActivity.class);
                         break;
                     case 3://手机杀毒
                         /*startActivity(VirusScanActivity.class);*/
