@@ -3,11 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-
     defaultConfig {
         applicationId "com.application.lee.mobilesafe"
-        minSdkVersion 21
-        targetSdkVersion 21
+        minSdkVersion 19
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
     }
@@ -16,6 +15,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
     }
 }
 
