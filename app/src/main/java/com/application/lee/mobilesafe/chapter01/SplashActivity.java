@@ -3,7 +3,14 @@ package com.application.lee.mobilesafe.chapter01;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.application.lee.mobilesafe.R;
@@ -20,11 +27,12 @@ import java.io.InputStream;
  * 作  者   ：李晓锋
  * 创建日期  ：2015\12\10
  * 描  述   ：
- * 修订历史  ：
+ * 修订历史  ：第一次修改 2016\1\25
  */
 public class SplashActivity extends Activity {
     private String mVersion;
     private TextView mVersionTV;
+    private RelativeLayout rl_splashacivity;
     protected static final String TAG = "SplashActivity";
 
     @Override
@@ -33,6 +41,7 @@ public class SplashActivity extends Activity {
 //        设置该Activity没有标题栏,在加载布局之前调用
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash);
+        rl_splashacivity = (RelativeLayout) findViewById(R.id.rl_splash_activity);
         mVersion = MyUtils.getVersion(getApplicationContext());
         initView();
         final VersionUpdateUtils updateUtils = new VersionUpdateUtils(mVersion, SplashActivity.this);
@@ -45,6 +54,7 @@ public class SplashActivity extends Activity {
             ;
         }.start();
         copyDB("antivirus.db");
+        startAnim();
     }
 
     private void copyDB(String filename) {
@@ -68,8 +78,16 @@ public class SplashActivity extends Activity {
         }
     }
 
+    /**
+     * 动画的实现
+    */
     private void startAnim(){
+        //渐变动画
+        AlphaAnimation alpha = new AlphaAnimation(0,1);
+        alpha.setDuration(6000);//设置渐变时间
+        alpha.setFillAfter(true);
 
+        rl_splashacivity.startAnimation(alpha);
     }
 
     private void initView() {

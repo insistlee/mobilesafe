@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.application.lee.mobilesafe.HomeActivity;
 import com.application.lee.mobilesafe.R;
+import com.application.lee.mobilesafe.chapter01.SplashActivity;
 import com.application.lee.mobilesafe.chapter01.entity.VersionEntity;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
