@@ -10,6 +10,7 @@
         android:layout_height="180dp"
         android:background="@color/blue">
         <TextView
+            android:text="我去！"
             android:id="@+id/tv_scanprocess"
             style="@style/wrapcontent"
             android:layout_centerInParent="true"

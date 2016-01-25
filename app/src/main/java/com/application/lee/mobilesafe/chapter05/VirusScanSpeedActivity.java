@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -54,14 +55,27 @@ public class VirusScanSpeedActivity extends Activity implements View.OnClickList
     private ScanVirusAdapter adapter;
     private ImageView mScanningIcon;
     private RotateAnimation rani;
+    public static final String TAG = "VirusScanSpeedActivity.class";
 
     private Handler mHandler = new Handler(){
+
         public void handleMessage(Message msg) {
            switch(msg.what){
                case SCAN_BENGIN:
                    mScanAppTV.setText("初始化杀毒引擎中...");
                    break;
                case SCANNING:
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
+                   Log.i(TAG,"101是在扫描啊！");
                    ScanAppInfo info = (ScanAppInfo)msg.obj;
                    mScanAppTV.setText("正在扫描:"+info.appName);
                    int speed = msg.arg1;
@@ -118,6 +132,7 @@ public class VirusScanSpeedActivity extends Activity implements View.OnClickList
                         isStop=true;
                         return;
                     }
+                    msg = Message.obtain();
                     String apkpath=info.applicationInfo.sourceDir;
                     //检查获取这个文件的特征码
                     String md5info = MD5Utils.getFileMd5(apkpath);
@@ -136,13 +151,14 @@ public class VirusScanSpeedActivity extends Activity implements View.OnClickList
                     scanInfo.appName=info.applicationInfo.loadLabel(pm).toString();
                     scanInfo.appicon=info.applicationInfo.loadIcon(pm);
                     msg.obj=scanInfo;
+
                     msg.arg1=process;
                     mHandler.sendMessage(msg);
-                    try {
+                   /* try {
                         Thread.sleep(300);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 }
                 msg=Message.obtain();
                 msg.what=SCAN_FINISH;
