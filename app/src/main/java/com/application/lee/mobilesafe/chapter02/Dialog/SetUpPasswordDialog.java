@@ -38,6 +38,7 @@ public class SetUpPasswordDialog extends Dialog implements android.view.View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.setup_password_dialog);
         super.onCreate(savedInstanceState);
+        setCanceledOnTouchOutside(false);
         initView();
     }
 

@@ -50,8 +50,8 @@
         android:gravity="center">
         <Button
             android:id="@+id/btn_canclescan"
-            android:layout_width="312dp"
-            android:layout_height="40dp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
             android:background="@drawable/cancle_scan_btn_selector"/>
     </LinearLayout>
 </LinearLayout>
