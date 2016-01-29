@@ -23,6 +23,7 @@ import com.application.lee.mobilesafe.chapter02.receiver.MyDeviceAdminReceiver;
 import com.application.lee.mobilesafe.chapter03.SecurityPhoneActivity;
 import com.application.lee.mobilesafe.chapter04.AppManagerActivity;
 import com.application.lee.mobilesafe.chapter05.VirusScanActivity;
+import com.application.lee.mobilesafe.chapter06.CacheClearListActivity;
 
 /**
  * 版  权   ：
@@ -73,7 +74,7 @@ public class HomeActivity extends Activity {
                         startActivity(VirusScanActivity.class);
                         break;
                     case 4://缓存清理
-                        /*startActivity(CacheClearListActivity.class);*/
+                        startActivity(CacheClearListActivity.class);
                         break;
                     case 5://进程管理
                         /*startActivity(ProcessManagerActivity.class);*/

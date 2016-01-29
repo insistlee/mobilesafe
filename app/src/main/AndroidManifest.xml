@@ -17,6 +17,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/><!-- 读取通讯录权限 -->
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/><!-- 写入通讯录权限 -->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
 
     <application
         android:name="com.application.lee.mobilesafe.App"
@@ -78,6 +80,8 @@
         <activity android:name="com.application.lee.mobilesafe.chapter04.AppManagerActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter05.VirusScanActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter05.VirusScanSpeedActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter06.CleanCacheActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter06.CacheClearListActivity"/>
 
         <service
             android:name="com.application.lee.mobilesafe.chapter02.service.GPSLocationService"

@@ -13,4 +13,6 @@
     <color name="light_blue">#3299CC</color>
     <color name="dark_gray">#871F78</color>
     <color name="bright_red">#FF0000</color>
+    <color name="blue_medium">#4D4DFF</color>
+    <color name="light_rose_red">#FF0000</color>
 </resources>
