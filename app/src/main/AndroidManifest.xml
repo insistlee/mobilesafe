@@ -82,11 +82,17 @@
         <activity android:name="com.application.lee.mobilesafe.chapter05.VirusScanSpeedActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter06.CleanCacheActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter06.CacheClearListActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter07.ProcessManagerActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter07.ProcessManagerSettingActivity"/>
 
         <service
             android:name="com.application.lee.mobilesafe.chapter02.service.GPSLocationService"
             android:persistent="true">
         </service>
+        <service
+            android:name="com.application.lee.mobilesafe.chapter07.service.AutoKillProcessService"
+            android:persistent="true">
+         </service>
         </application>
 
 </manifest>

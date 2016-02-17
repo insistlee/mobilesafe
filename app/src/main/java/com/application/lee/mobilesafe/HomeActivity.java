@@ -24,6 +24,7 @@ import com.application.lee.mobilesafe.chapter03.SecurityPhoneActivity;
 import com.application.lee.mobilesafe.chapter04.AppManagerActivity;
 import com.application.lee.mobilesafe.chapter05.VirusScanActivity;
 import com.application.lee.mobilesafe.chapter06.CacheClearListActivity;
+import com.application.lee.mobilesafe.chapter07.ProcessManagerActivity;
 
 /**
  * 版  权   ：
@@ -77,7 +78,7 @@ public class HomeActivity extends Activity {
                         startActivity(CacheClearListActivity.class);
                         break;
                     case 5://进程管理
-                        /*startActivity(ProcessManagerActivity.class);*/
+                        startActivity(ProcessManagerActivity.class);
                         break;
                     case 6://流量统计
                         /*startActivity(TrafficMonitoringActivity.class);*/
