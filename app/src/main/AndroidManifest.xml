@@ -84,6 +84,12 @@
         <activity android:name="com.application.lee.mobilesafe.chapter06.CacheClearListActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter07.ProcessManagerActivity"/>
         <activity android:name="com.application.lee.mobilesafe.chapter07.ProcessManagerSettingActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter09.AdvancedToolsActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter09.AppLockActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter09.EnterPswActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter09.NumbelongtoActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter09.SMSBackupActivity"/>
+        <activity android:name="com.application.lee.mobilesafe.chapter09.SMSReducitionActivity"/>
 
         <service
             android:name="com.application.lee.mobilesafe.chapter02.service.GPSLocationService"
@@ -93,6 +99,10 @@
             android:name="com.application.lee.mobilesafe.chapter07.service.AutoKillProcessService"
             android:persistent="true">
          </service>
+        <service
+            android:name="com.application.lee.mobilesafe.chapter09.service.AppLockService"
+            android:persistent="true">
+        </service>
         </application>
 
 </manifest>

@@ -25,6 +25,7 @@ import com.application.lee.mobilesafe.chapter04.AppManagerActivity;
 import com.application.lee.mobilesafe.chapter05.VirusScanActivity;
 import com.application.lee.mobilesafe.chapter06.CacheClearListActivity;
 import com.application.lee.mobilesafe.chapter07.ProcessManagerActivity;
+import com.application.lee.mobilesafe.chapter09.AdvancedToolsActivity;
 
 /**
  * 版  权   ：
@@ -84,7 +85,7 @@ public class HomeActivity extends Activity {
                         /*startActivity(TrafficMonitoringActivity.class);*/
                         break;
                     case 7://高级工具
-                        /*startActivity(AdvancedToolsActivity.class);*/
+                        startActivity(AdvancedToolsActivity.class);
                         break;
                     case 8://设置中心
                         /*startActivity(SettingsActivity.class);*/

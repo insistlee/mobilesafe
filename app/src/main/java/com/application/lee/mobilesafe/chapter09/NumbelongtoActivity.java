@@ -15,11 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.application.lee.mobilesafe.R;
-import com.application.lee.mobilesafe.chapter09.db.dao.NumBelongtoDao;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
 /**
@@ -124,7 +122,7 @@ public class NumbelongtoActivity extends Activity implements View.OnClickListene
                         copyDB(dbName);
                     }
                     //查询数据库
-                    String location  = NumBelongtoDao.getLocation(phonenumber);
+                    String location  = com.application.lee.mobilesafe.chapter09.db.dao.NumBelongtoDao.getLocation(phonenumber);
                     mResultTV.setText("归属地:"+location);
                 }else{
                     Toast.makeText(this,"请输入需要查询的号码",Toast.LENGTH_LONG).show();

@@ -5,21 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/graye5">
-    <include layout="@layout/titlebar"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
         <com.application.lee.mobilesafe.chapter09.widget.MyCircleProgress
-            android:id="@+id/mcp_smsbackup"
+            android:id="@+id/mcp_reducition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:background="@drawable/smsbackup_button_bg"
             android:gravity="center"
-            android:text="一键备份"
+            android:text="一键还原"
             android:textColor="@color/white"
             lee:circleColor="@color/bright_red"
-            lee:progressColor="@color/light_pink"
-            android:background="@drawable/smsbackup_button_bg"/>
+            lee:progressColor="@color/light_pink"/>
     </LinearLayout>
 </LinearLayout>
